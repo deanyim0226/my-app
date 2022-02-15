@@ -1,6 +1,7 @@
 
 .class{
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    background-color: rgba(170, 236, 16, 0.404);
 }
