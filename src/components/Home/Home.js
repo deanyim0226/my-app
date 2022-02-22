@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Class from '../Class/Class';
+import ClassGraphQL from '../Class/ClassGraphQL';
+import "./Home.css";
 
 function Home(props) {
 
@@ -13,7 +15,7 @@ function Home(props) {
     const handleSubmit = (event) =>{
         event.preventDefault();
 
-        if(!favoriteClasses.includes(value) && value != ''){
+        if(!favoriteClasses.includes(value)){
             setClasses(favoriteClasses.concat(value));
             setValue('');
         }
@@ -31,12 +33,18 @@ function Home(props) {
                 <h2>-------------------LISTS OF CLASSES-------------------</h2>
             </form>
             
-            <div>
+            <div className="my-classes">
                 {favoriteClasses.map((favClass) =>
                     <Class name = {favClass} key = {favClass}></Class>
                 )}
             </div>
-            <h3>----------------------------------------------------------------------------</h3>
+
+            <div className="my-classes">
+                {favoriteClasses.map((favClass) =>
+                    <ClassGraphQL name = {favClass} key = {favClass}></ClassGraphQL>
+                )}
+            </div>
+         
         </div>
     )
 }
